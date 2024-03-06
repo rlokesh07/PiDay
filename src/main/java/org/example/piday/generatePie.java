@@ -15,25 +15,31 @@ public class generatePie {
     public Group Pie (){
 
         Circle circle = new Circle();
-        circle.setTranslateX(0);
-        circle.setTranslateY(-200 - HelloController.testProblem.radius);
         circle.setRadius(HelloController.testProblem.radius);
         //jhhgukjbhvngc
 
-        Line line = new Line();
-        line.setStartX(0);
-        line.setStartY(HelloController.testProblem.radius);
-        line.setEndX(0);
-        line.setEndY(0);
 
-        line.setTranslateY(-50 - HelloController.testProblem.radius);
 
         // black for better testting
-        line.setStroke(Color.BLACK);
+
 
         Group g = new Group();
 
-        g.getChildren().addAll(line, circle);
+        g.getChildren().addAll(circle);
+        for (int i = 0; i < HelloController.testProblem.denominator; i++){
+
+            Line slice = new Line();
+            slice.setStartY(Math.cos((2* Math.PI * i)/denominator)*HelloController.testProblem.radius);
+            slice.setStartX(Math.sin((2* Math.PI * i)/denominator)*HelloController.testProblem.radius);
+            slice.setEndX(0);
+            slice.setEndY(0);
+            slice.setStroke(Color.WHITE);
+            g.getChildren().add(slice);
+        }
+
+
+
+
 
         return g;
     }

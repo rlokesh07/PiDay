@@ -21,10 +21,11 @@ public class HelloApplication extends Application {
         generatePie questionPie = new generatePie(HelloController.testProblem.denominator);
 
 
-
+        Group pie = questionPie.Pie();
+        pie.setTranslateY(-50 - HelloController.testProblem.radius);
 
         StackPane root = new StackPane();
-        root.getChildren().addAll(fxmlLoader.load(), questionPie.Pie()); // Add both FXML content and circle to the StackPane
+        root.getChildren().addAll(fxmlLoader.load(), pie); // Add both FXML content and circle to the StackPane
 
         Scene scene = new Scene(root, 300, 240);
 

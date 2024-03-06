@@ -19,7 +19,7 @@ public class Problem {
 
         Random rand = new Random();
 
-        return rand.nextInt(30);
+        return rand.nextInt(30)+5;
 
     }
 

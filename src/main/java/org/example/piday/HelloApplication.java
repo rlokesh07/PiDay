@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -17,17 +18,13 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 
 
+        generatePie questionPie = new generatePie(HelloController.testProblem.denominator);
 
-        int radius = HelloController.getRadius();
-        Circle circle = new Circle();
-        circle.setTranslateX(0);
-        circle.setTranslateY(-50 - radius);gi
-        circle.setRadius(radius);
-        //jhhgukjbhvngc
+
 
 
         StackPane root = new StackPane();
-        root.getChildren().addAll(fxmlLoader.load(), circle); // Add both FXML content and circle to the StackPane
+        root.getChildren().addAll(fxmlLoader.load(), questionPie.Pie()); // Add both FXML content and circle to the StackPane
 
         Scene scene = new Scene(root, 300, 240);
 

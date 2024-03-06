@@ -10,19 +10,17 @@ public class HelloController {
     @FXML
     private Label welcomeText;
 
-
-
-    public static int radius = generateProblem.generateRadius();
+    static Problem testProblem = new Problem("ballsucker");
     @FXML
     protected void onHelloButtonClick() {
 
 
-        welcomeText.setText("Circle with radius of " + radius);
+        welcomeText.setText("Circle with radius of " + testProblem.radius);
         button1.setText("Ok");
     }
 
     public static int getRadius(){
-        return radius;
+        return testProblem.radius;
     }
 
 

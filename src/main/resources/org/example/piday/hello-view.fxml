@@ -16,6 +16,6 @@
     <Label fx:id="welcomeText"/>
     <Button fx:id="button1" text="New Question" onAction="#onButton1Click"/>
     <TextField fx:id="fieldAnswer" text="" />
-    <Button fx:id="submit" text="submit" onAction="#submitClicked"/>
+    <Button fx:id="submit" text="Submit" onAction="#submitClicked"/>
     <Label fx:id="errorValue"/>
 </VBox>

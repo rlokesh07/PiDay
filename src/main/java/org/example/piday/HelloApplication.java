@@ -38,7 +38,7 @@ public class HelloApplication extends Application {
 
 
         Scene scene = new Scene(root, 300, 240);
-        stage.setTitle("BLACK!");
+        stage.setTitle("PI!");
         stage.setScene(scene);
         stage.show();
     }

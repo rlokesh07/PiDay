@@ -14,7 +14,7 @@
     </padding>
     <Pane fx:id="drawingPane" />
     <Label fx:id="welcomeText"/>
-    <Button fx:id="button1" onAction="#onButton1Click"/>
+    <Button fx:id="button1" text="New Question" onAction="#onButton1Click"/>
     <TextField fx:id="fieldAnswer" text="" />
     <Button fx:id="submit" text="submit" onAction="#submitClicked"/>
     <Label fx:id="errorValue"/>

@@ -33,6 +33,8 @@ public class HelloController {
         welcomeText.setText("Pi(e) with radius of " + testProblem.radius + " where someone ate 1/" + testProblem.denominator +" of it");
         button1.setText("New Question");
         biteCount = 0;
+        errorValue.setText("");
+        fieldAnswer.setText("");
 
     }
 
@@ -52,17 +54,19 @@ public class HelloController {
 
     public void submitClicked() {
         int integerPlaces = fieldAnswer.getText().indexOf(".");
-        int decimalPlaces = fieldAnswer.getLength() - integerPlaces;
-        MathContext precision = new MathContext(decimalPlaces + 1);
+        int decimalPlaces =   integerPlaces > 0 ? fieldAnswer.getLength() - integerPlaces:
+                                1;
+        MathContext precision = new MathContext((decimalPlaces + 1));
         BigDecimal error = null;
 
         try {
-            error = testProblem.answer().subtract(new BigDecimal(fieldAnswer.getText())).abs().round(precision);
+            error = testProblem.answer().subtract(new BigDecimal(fieldAnswer.getText())).round(precision);
         } catch (Exception e){
             errorValue.setText("Please input a number");
         }
 
         errorValue.setText("FALSE: You are off by: " + error.toString());
+
 
     }
 }

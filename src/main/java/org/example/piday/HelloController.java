@@ -25,12 +25,12 @@ public class HelloController {
     private VBox vBox;
     public int biteCount;
 
-    static Problem testProblem = new Problem("ballsucker");
+    static Problem testProblem = new Problem("");
     @FXML
     protected void onButton1Click() {
 
         testProblem = new Problem("newProblem");
-        welcomeText.setText("Pi(e) with radius of " + testProblem.radius + " where someone ate 1/" + testProblem.denominator +" of it");
+        welcomeText.setText("Circumference of pi(e) with radius of " + testProblem.radius + " where someone ate 1/" + testProblem.denominator +" of it");
         button1.setText("New Question");
         biteCount = 0;
         errorValue.setText("");

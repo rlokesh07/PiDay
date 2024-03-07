@@ -18,7 +18,8 @@ BigDecimal pi = new BigDecimal("3.1415926535897932384626433832795028841971693993
     }
 
     public BigDecimal answer(){
-        return BigDecimal.valueOf(1 - (1/denominator)).multiply(BigDecimal.valueOf(2)).multiply(pi).multiply(BigDecimal.valueOf(radius)).divide(BigDecimal.valueOf(denominator));
+        BigDecimal numerator = BigDecimal.valueOf(1 - (1/denominator)).multiply(BigDecimal.valueOf(2)).multiply(pi).multiply(BigDecimal.valueOf(radius));
+        return numerator.divide(BigDecimal.valueOf(denominator));
     }
 
     public void refresh(){
